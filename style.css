@@ -212,7 +212,7 @@ section#about {
     0.8
   ); /* Fundo branco com transparência */
   padding: 40px; /* Aumente o padding para dar mais espaço ao texto */
-  border-radius: 10px; /* Bordas arredondadas */
+  border-radius: 2rem; /* Bordas arredondadas */
   max-width: 600px; /* Limita a largura do container */
   text-align: center; /* Centraliza o texto */
   z-index: 1; /* Coloca o container acima do blur */
