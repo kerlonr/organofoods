@@ -4,6 +4,7 @@
   --third-color: #c7b356;
   --background-color: #f4f4f4;
   --text-color: #0b866d;
+  --hover-color: #45a049;
 }
 
 /* Estilos para a scrollbar */
@@ -67,9 +68,9 @@ nav ul {
 nav ul li a {
   color: var(--primary-color);
   text-decoration: none;
-  padding: 6px 12px;
+  padding: 1rem 2rem;
   font-size: 1.2rem;
-  border-radius: 1rem;
+  border-radius: 2rem;
   transition: 0.3s ease;
 }
 
@@ -88,8 +89,9 @@ nav ul li a:hover {
   transition: 0.3s ease;
 }
 
-.fa-solid:hover,
-.fa-regular:hover {
+.fa-heart:hover,
+.fa-bag-shopping:hover,
+.fa-user:hover {
   transform: scale(1.1);
   color: var(--third-color);
   cursor: pointer;
@@ -154,10 +156,19 @@ nav ul li a:hover {
 
 /* Layout Container */
 .container {
+  display: flex;
   max-width: 1100px;
   margin: 0 auto;
   padding: 1.5rem;
+  flex-direction: column;
+  align-items: center;
 }
+
+.icone-hero {
+  margin: 20px;
+  font-size: 4rem;
+}
+
 section#about {
   opacity: 50%;
   position: relative;
@@ -234,6 +245,29 @@ section p {
   text-align: center;
 }
 
+.btn-produtor {
+  background-color: var(--primary-color);
+  color: white;
+  width: 25%;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-produtor:hover {
+  background-color: var(--hover-color); /* Cor de fundo ao passar o mouse */
+  transform: translateY(-2px); /* Efeito de levitar */
+}
+
+.btn-produtor:active {
+  transform: translateY(0); /* Reverte o efeito ao clicar */
+}
+
 /* Products Section */
 .products {
   display: flex;
@@ -246,6 +280,12 @@ section p {
   margin: 10px;
   width: 23%;
   overflow: hidden;
+  transition: 0.3s ease;
+}
+.product:hover {
+  transform: scale(1.1);
+  color: var(--third-color);
+  cursor: pointer;
 }
 
 .product img {
@@ -256,8 +296,9 @@ section p {
 }
 
 .product h2 {
-  font-size: 16px;
+  font-size: 1.5rem;
   margin-top: 10px;
+  color: var(--secundary-color);
 }
 
 /* Services Section */
@@ -336,13 +377,13 @@ form button {
   color: white;
   padding: 10px;
   border: none;
-  border-radius: 6px;
+  border-radius: 2rem;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 form button:hover {
-  background: #0a5721;
+  background: var(--hover-color);
 }
 
 /* Footer */
@@ -394,10 +435,12 @@ footer {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
-.footer-links a:hover,
-.footer-social a:hover {
+.icon-social {
+  transition: 0.3s ease;
+}
+.icon-social:hover {
   color: #f1a40a;
+  scale: 1.1;
 }
 
 .footer-social {
@@ -408,7 +451,6 @@ footer {
 
 .footer-social ul {
   display: flex;
-  gap: 15px;
 }
 
 .footer-bottom {
