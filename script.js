@@ -1,5 +1,6 @@
-<script>
-  document.getElementById("contact-form").addEventListener("submit", function(event) {
+document
+  .getElementById("contact-form")
+  .addEventListener("submit", function (event) {
     // Impede o envio padrão do formulário para que possamos limpar os campos primeiro
     event.preventDefault();
 
@@ -11,4 +12,12 @@
     // Envia o formulário após limpar
     this.submit();
   });
-</script>
+
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const icons = document.querySelector(".icons"); // Seleciona os ícones
+
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+  icons.classList.toggle("active"); // Alterna a visibilidade dos ícones
+});
