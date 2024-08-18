@@ -50,8 +50,9 @@ header {
 }
 
 nav {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 /* Navbar padrão (para monitores e telas grandes) */
