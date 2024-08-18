@@ -1,10 +1,10 @@
 :root {
-  --primary-color: #0b866d;
-  --secondary-color: #d5c863;
-  --third-color: #c7b356;
-  --background-color: #f4f4f4;
-  --text-color: #0b866d;
-  --hover-color: #45a049;
+  --primary-color: #0b866d; /* Verde */
+  --secondary-color: #f4f4f4; /* Cinza claro */
+  --third-color: #0c705c; /* Amarelo substituído por tom neutro */
+  --background-color: #ffffff; /* Branco */
+  --text-color: #0b866d; /* Verde */
+  --hover-color: #0c705c; /* Verde mais claro */
 }
 
 /* Estilos para a scrollbar */
@@ -17,12 +17,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--third-color);
+  background-color: #c9c9c9;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--primary-color);
+  background-color: #a7a7a7;
 }
 
 /* Reset padrão */
@@ -41,12 +41,13 @@ body {
 
 /* Header e Navegação */
 header {
-  background: #ffffff;
-  color: var(--primary-color);
+  background: #ffffff; /* Branco */
+  color: var(--primary-color); /* Verde */
   padding: 0.5rem 2rem;
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid var(--secondary-color);
+  align-items: center;
+  border-bottom: 2px solid var(--secondary-color); /* Cinza claro */
 }
 
 nav {
@@ -56,7 +57,8 @@ nav {
 }
 
 .logo img {
-  max-height: 80px;
+  max-height: 60px;
+  display: block;
 }
 
 nav ul {
@@ -66,24 +68,24 @@ nav ul {
 }
 
 nav ul li a {
-  color: var(--primary-color);
+  color: var(--primary-color); /* Verde */
   text-decoration: none;
   padding: 1rem 2rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border-radius: 2rem;
   transition: 0.3s ease;
 }
 
 nav ul li a:hover {
-  background: var(--secondary-color);
-  color: var(--background-color);
+  color: var(--hover-color); /* Branco */
+  transform: scale(20px);
 }
 
 /* Ícones de navegação */
 .icons {
   display: flex;
   gap: 30px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   justify-content: center;
   flex-wrap: wrap;
   transition: 0.3s ease;
@@ -93,7 +95,7 @@ nav ul li a:hover {
 .fa-bag-shopping:hover,
 .fa-user:hover {
   transform: scale(1.1);
-  color: var(--third-color);
+  color: var(--third-color); /* Tom neutro */
   cursor: pointer;
 }
 
@@ -106,7 +108,7 @@ nav ul li a:hover {
 .hero-container {
   display: flex;
   width: 100%;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color); /* Verde */
 }
 
 .hero-image {
@@ -118,7 +120,6 @@ nav ul li a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0rem 2rem 2rem 0rem;
 }
 
 .hero-text {
@@ -131,8 +132,8 @@ nav ul li a:hover {
   gap: 2rem;
   text-align: right;
   font-size: 3rem;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
+  background-color: var(--primary-color); /* Verde */
+  color: var(--background-color); /* Branco */
 }
 
 .hero-text p {
@@ -141,8 +142,8 @@ nav ul li a:hover {
 }
 
 .cta-button {
-  background: var(--text-color);
-  color: white;
+  background-color: #f4f4f4;
+  color: var(--primary-color);
   padding: 10px 30px;
   text-decoration: none;
   border-radius: 2rem;
@@ -151,8 +152,9 @@ nav ul li a:hover {
 }
 
 .cta-button:hover {
-  background: var(--third-color);
-  scale: 1.1;
+  background: var(--hover-color); /* Verde mais claro */
+  scale: 1.01;
+  color: #f1f1f1;
 }
 
 /* Layout Container */
@@ -170,14 +172,21 @@ nav ul li a:hover {
   font-size: 4rem;
 }
 
+/* About Section */
 section#about {
-  opacity: 50%;
   position: relative;
   background-image: url(imgs/background-quemsomos.png);
   background-size: cover;
   background-position: center;
-  height: 300px; /* Ajuste a altura conforme necessário */
-  overflow: hidden; /* Garante que o blur não extravase */
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#about {
+  position: relative;
+  overflow: hidden; /* Garante que o pseudo-elemento não saia da seção */
 }
 
 section#about::before {
@@ -187,42 +196,28 @@ section#about::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: inherit; /* Herda a imagem de fundo */
-  filter: blur(8px); /* Ajuste o valor do blur conforme necessário */
-  z-index: 0; /* Coloca o blur atrás do conteúdo */
-}
-
-section#about {
-  position: relative; /* Permite posicionar o container */
-  background-image: url(imgs/background-quemsomos.png);
-  background-size: cover;
-  background-position: center;
-  height: 400px; /* Aumente a altura conforme necessário */
-  overflow: hidden; /* Garante que o blur não extravase */
-  display: flex; /* Usar flexbox para centralização */
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
+  background: inherit; /* Usa a imagem de fundo da seção */
+  filter: blur(4px); /* Aplica um desfoque mais intenso */
+  background-color: rgba(0, 0, 0, 0.7); /* Escurece com uma camada preta semi-transparente */
+  z-index: 0;
 }
 
 .container-about {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Fundo branco com transparência */
-  padding: 40px; /* Aumente o padding para dar mais espaço ao texto */
-  border-radius: 2rem; /* Bordas arredondadas */
-  max-width: 600px; /* Limita a largura do container */
-  text-align: center; /* Centraliza o texto */
-  z-index: 1; /* Coloca o container acima do blur */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 1rem;
+  max-width: 600px;
+  text-align: center;
+  z-index: 1;
 }
 
-/* Adicionando alinhamento vertical e horizontal */
 .container-about h2,
 .container-about p {
-  margin: 0; /* Remove margem padrão */
-  line-height: 1.5; /* Para melhor legibilidade */
+  margin: 0;
+  line-height: 1.2;
+}
+.container-about p {
+  font-size: 20px;
 }
 
 /* Sections */
@@ -236,7 +231,7 @@ section {
 section h2 {
   font-size: 2rem;
   text-align: center;
-  color: var(--primary-color);
+  color: var(--primary-color); /* Verde */
   grid-column: span 2;
   margin-bottom: 2rem;
 }
@@ -246,27 +241,42 @@ section p {
   text-align: center;
 }
 
-.btn-produtor {
-  background-color: var(--primary-color);
-  color: white;
-  width: 25%;
-  padding: 15px 25px;
-  border: none;
-  border-radius: 2rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin-top: 2rem;
-  transition: background-color 0.3s, transform 0.3s;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Serviços */
+#services {
+  background-color: var(--background-color); /* Branco */
+  padding: 2rem 1rem;
 }
 
-.btn-produtor:hover {
-  background-color: var(--hover-color); /* Cor de fundo ao passar o mouse */
-  transform: translateY(-2px); /* Efeito de levitar */
+.services-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-content: center;
 }
 
-.btn-produtor:active {
-  transform: translateY(0); /* Reverte o efeito ao clicar */
+.service {
+  background: #ffffff; /* Branco */
+  color: var(--text-color); /* Verde */
+  padding: 20px;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.service h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.service p {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 /* Products Section */
@@ -283,9 +293,10 @@ section p {
   overflow: hidden;
   transition: 0.3s ease;
 }
+
 .product:hover {
   transform: scale(1.1);
-  color: var(--third-color);
+  color: var(--third-color); /* Tom neutro */
   cursor: pointer;
 }
 
@@ -299,41 +310,7 @@ section p {
 .product h2 {
   font-size: 1.5rem;
   margin-top: 10px;
-  color: var(--secundary-color);
-}
-
-/* Services Section */
-#services,
-#contact {
-  background: url(https://organicosinbox.com.br/wp-content/themes/odin/assets/images/bg-blog.png);
-}
-
-.services-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  justify-content: center;
-}
-
-.service {
-  color: var(--background-color);
-  background: var(--primary-color);
-  padding: 20px;
-  border-radius: 2rem;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service:hover {
-  transform: translateY(-1rem);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  background: var(--hover-color);
-}
-
-.service h3 {
-  font-size: 1.6rem;
-  margin-bottom: 0.75rem;
+  color: var(--primary-color); /* Verde */
 }
 
 /* Contact Section */
@@ -358,9 +335,8 @@ form {
   display: grid;
   gap: 10px;
   padding: 15px;
-  background: var(--background-color);
+  background: var(--background-color); /* Branco */
   border-radius: 8px;
-  border: 1px solid var(--secondary-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -368,13 +344,13 @@ form input,
 form textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid var(--primary-color);
+  border: 1px solid #c9c9c9; /* Verde */
   border-radius: 6px;
   font-size: 0.9rem;
 }
 
 form button {
-  background: var(--primary-color);
+  background: var(--primary-color); /* Verde */
   color: white;
   padding: 10px;
   border: none;
@@ -384,9 +360,8 @@ form button {
 }
 
 form button:hover {
-  background: var(--hover-color);
+  background: var(--hover-color); /* Verde mais claro */
 }
-
 /* Footer */
 footer {
   background-color: var(--primary-color);
@@ -455,112 +430,69 @@ footer {
 }
 
 .footer-bottom {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
+
   font-size: 1rem;
   text-align: center;
   padding: 10px 0;
 }
 
-/* Media Queries */
+/* Responsive */
 @media (max-width: 768px) {
-  .logo {
-    font-size: 1.3rem;
-  }
-
-  nav ul {
+  header {
     flex-direction: column;
-    gap: 8px;
+    align-items: flex-start;
   }
 
-  #hero h1 {
-    font-size: 2.3rem;
+  nav {
+    margin-top: 1rem;
   }
 
-  #hero p {
-    font-size: 1.1rem;
-  }
-
-  .cta-button {
-    padding: 8px 18px;
-  }
-
-  section h2 {
-    font-size: 1.8rem;
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  footer {
-    padding: 20px;
-  }
-
-  .footer-container {
-    max-width: 1200px;
-    padding: 20px;
-  }
-
-  .footer-links,
-  .footer-contact,
-  .footer-social {
-    flex: 1;
-    margin: 0 auto 20px auto;
-    max-width: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  nav ul {
-    gap: 5px;
-  }
-
-  .logo img {
-    max-height: 40px;
-  }
-
-  #hero h1 {
-    font-size: 2rem;
-  }
-
-  #hero p {
-    font-size: 1rem;
-  }
-
-  .cta-button {
-    padding: 6px 16px;
-    font-size: 1rem;
-  }
-
-  .products {
+  .hero-container {
     flex-direction: column;
   }
 
-  .product {
+  .hero-image {
     width: 100%;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .service {
-    padding: 15px;
-    font-size: 1rem;
+  .hero-text {
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
   }
 
   .contact-container {
     flex-direction: column;
   }
 
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
+  .contact-form {
+    margin-top: 20px;
   }
+}
+.btn-produtor {
+  background-color: var(--primary-color);
+  color: white;
+  width: 25%;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  .footer-links,
-  .footer-contact,
-  .footer-social {
-    margin-bottom: 20px;
-  }
+.btn-produtor:hover {
+  background-color: var(--hover-color); /* Cor de fundo ao passar o mouse */
+  transform: translateY(-2px); /* Efeito de levitar */
+}
+
+.btn-produtor:active {
+  transform: translateY(0); /* Reverte o efeito ao clicar */
+}
+
+.producers{
+  font-size: 18px;
 }
