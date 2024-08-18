@@ -44,9 +44,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem; /* Ajustado para um cabeçalho menor */
-  background-color: var(--background-color); /* Branco */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+  padding: 0.5rem 3%;
+  background-color: var(--background-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -54,6 +54,7 @@ nav {
   align-items: center;
 }
 
+/* Navbar padrão (para monitores e telas grandes) */
 nav ul {
   display: flex;
   gap: 1rem;
@@ -90,19 +91,19 @@ nav ul li a:hover {
 
 /* Navbar responsiva */
 .nav-links {
-  display: none; /* Ocultar o menu no celular */
+  display: flex; /* Ocultar o menu no celular */
 }
 
 .nav-links.active {
-  display: flex; /* Mostrar quando ativado */
+  display: flex;
   flex-direction: column;
   position: absolute;
-  top: 60px; /* Ajustar conforme necessário */
+  top: 15%;
   right: 0;
   background-color: var(--background-color);
   width: 100%;
   padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links ul {
@@ -447,7 +448,8 @@ footer ul li {
 }
 
 /* Media Queries */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1100px) {
+  /* Ocultar o menu de navegação e mostrar o hambúrguer em dispositivos móveis */
   header {
     padding: 0px;
     flex-direction: row;
@@ -459,14 +461,18 @@ footer ul li {
     flex-direction: column;
     gap: 1rem;
   }
+  .nav-links {
+    display: none; /* Ocultar o menu no celular */
+  }
   .icons {
     content-visibility: hidden;
   }
+
   .hamburger {
     display: flex;
   }
 
-  .hamburger.active + nav ul {
+  .hamburger.active + .nav-links {
     display: flex;
   }
 
