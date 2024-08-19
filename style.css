@@ -546,4 +546,8 @@ footer ul li {
     padding-right: 0;
     margin-bottom: 2rem;
   }
+    img {
+    width: 100%;
+    height: auto;
+  }
 }
