@@ -106,7 +106,7 @@ nav ul li a {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 15%;
+  top: 7%;
   right: 0;
   background-color: var(--background-color);
   width: 100%;
