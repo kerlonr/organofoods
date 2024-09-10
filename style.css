@@ -437,13 +437,20 @@ form label {
 
 /* Footer */
 footer {
-  background-color: var(--primary-color); /* Verde */
-  color: var(--background-color); /* Branco */
+  background-color: var(--primary-color);
+  color: var(--background-color);
   text-align: center;
-  padding: 1rem;
   font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
 }
-
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 4rem 0px;
+  gap: 20px;
+}
 footer a {
   color: var(--background-color); /* Branco */
   text-decoration: none;
@@ -453,7 +460,10 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-
+footer h3 {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
 footer ul {
   list-style: none; /* Remove a decoração de lista */
   padding: 0; /* Remove o preenchimento padrão */
@@ -463,7 +473,19 @@ footer ul {
 footer ul li {
   margin-bottom: 0.5rem; /* Espaçamento entre itens da lista, se necessário */
 }
-
+.footer-social {
+  display: flex;
+  align-items: center;
+}
+.icons {
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  font-size: 2rem;
+}
 /* Media Queries */
 @media screen and (max-width: 1100px) {
   header {
@@ -479,10 +501,6 @@ footer ul li {
 
   .nav-links {
     display: none; /* Ocultar o menu no celular */
-  }
-
-  .icons {
-    content-visibility: hidden;
   }
 
   .hamburger {
@@ -550,8 +568,19 @@ footer ul li {
     padding-right: 0;
     margin-bottom: 2rem;
   }
-    img {
+  img {
     width: 50%;
     height: auto;
+  }
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0px;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-bottom {
+    padding-bottom: 2rem;
   }
 }
