@@ -129,7 +129,12 @@ nav ul li a {
   display: block;
   animation: fadeIn 0.6s;
 }
-
+.row {
+  justify-content: center;
+}
+.col-md-4 {
+  margin-bottom: 12px;
+}
 @keyframes fadeIn {
   from {
     opacity: 0;
